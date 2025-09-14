@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Weather App</h1>
+      <p>Get current weather by city or your location.</p>
+    </header>
+
+    <section class="controls">
+      <form id="cityForm" autocomplete="off">
+        <input id="cityInput" type="text" placeholder="Enter city (e.g., London, Mumbai)" />
+        <button type="submit" id="searchBtn">Search</button>
+        <button type="button" id="geoBtn" title="Use my location">Use My Location</button>
+      </form>
+    </section>
+
+    <section id="result" class="result hidden" aria-live="polite">
+      <div class="card">
+        <div class="left">
+          <img id="weatherIcon" alt="weather icon" />
+        </div>
+        <div class="right">
+          <h2 id="locationName"></h2>
+          <p id="description" class="muted"></p>
+          <p><strong>Temperature:</strong> <span id="temp"></span>°C</p>
+          <p><strong>Feels like:</strong> <span id="feels_like"></span>°C</p>
+          <p><strong>Humidity:</strong> <span id="humidity"></span>%</p>
+          <p><strong>Wind:</strong> <span id="wind"></span> m/s</p>
+        </div>
+      </div>
+      <p id="updatedAt" class="small muted"></p>
+    </section>
+
+    <section id="error" class="error hidden" role="alert"></section>
+
+    <footer class="footer">
+      <small>Data from OpenWeatherMap. Replace <code>YOUR_API_KEY</code> in <code>app.js</code>.</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
